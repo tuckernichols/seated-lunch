@@ -25,7 +25,7 @@ def getNames(fileName):
 def fetch(range, spreadsheet):
   SCOPES = ["https://www.googleapis.com/auth/spreadsheets"]
   creds = None
-  if os.path.exists("tokenN9.json"):
+  if os.path.exists("seatLunchData/tokenN9.json"):
     creds = Credentials.from_authorized_user_file("tokenN9.json", SCOPES)
   # If there are no (valid) credentials available, let the user log in.
   if not creds or not creds.valid:
@@ -37,7 +37,7 @@ def fetch(range, spreadsheet):
       )
       creds = flow.run_local_server(port=0)
     # Save the credentials for the next run
-    with open("tokenN9.json", "w") as token:
+    with open("seatLunchData/tokenN9.json", "w") as token:
       token.write(creds.to_json())
 
   try:

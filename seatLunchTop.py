@@ -7,8 +7,8 @@ import CSProjectFunctions
 
 
 def main():
-    studentNames = CSProjectFunctions.getNames("studentNames.CSV")[1:]
-    teacherNames = CSProjectFunctions.getNames("teacherNames.CSV")[1:]
+    studentNames = CSProjectFunctions.getNames("seatLunchData/studentNames.CSV")[1:]
+    teacherNames = CSProjectFunctions.getNames("seatLunchData/teacherNames.CSV")[1:]
     data = CSProjectFunctions.allData()
 
     for student in studentNames:
