@@ -26,14 +26,14 @@ def fetch(range, spreadsheet):
   SCOPES = ["https://www.googleapis.com/auth/spreadsheets"]
   creds = None
   if os.path.exists("seatLunchData/tokenN9.json"):
-    creds = Credentials.from_authorized_user_file("tokenN9.json", SCOPES)
+    creds = Credentials.from_authorized_user_file("seatLunchData/tokenN9.json", SCOPES)
   # If there are no (valid) credentials available, let the user log in.
   if not creds or not creds.valid:
     if creds and creds.expired and creds.refresh_token:
       creds.refresh(Request())
     else:
       flow = InstalledAppFlow.from_client_secrets_file(
-          "oath creds N9 pro.json", SCOPES
+          "seatLunchData/oath creds N9 pro.json", SCOPES
       )
       creds = flow.run_local_server(port=0)
     # Save the credentials for the next run
