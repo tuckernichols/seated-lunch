@@ -9,6 +9,8 @@ import CSProjectFunctions
 def main():
     studentNames = CSProjectFunctions.getNames("seatLunchData/studentNames.CSV")[1:]
     teacherNames = CSProjectFunctions.getNames("seatLunchData/teacherNames.CSV")[1:]
+    teacherNames = []
+    studentNames = [["Nichols, Tucker '26", "tnichols@brooksschool.org"]]
     data = CSProjectFunctions.allData()
 
     for student in studentNames:
@@ -20,7 +22,6 @@ def main():
             CSProjectFunctions.emailInfo(dataDict=emailData, Recipient=student[1])
         except:
             print(f"could not send to {student[1]}")
-
 
     for teacher in teacherNames:
         emailData = {}
